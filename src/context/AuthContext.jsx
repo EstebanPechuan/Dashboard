@@ -3,10 +3,10 @@ import { createContext } from "react"
 
 const users = [
     {
-        username: 'pechu',
+        username: 'esteban',
         name: 'Esteban Pechuan',
         email: 'esteban.pechuan@gmail.com',
-        password: 'Pechu.1234!',
+        password: 'Esteban1234',
         data: {
             "overview": {
                 "currentBalance": 4836.00,

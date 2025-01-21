@@ -31,15 +31,15 @@ export const Login = () => {
                     type="text"
                     value={name}
                     onChange={(e) => setName(e.target.value)}
-                    placeholder="Username"
-                    />
+                    placeholder="esteban"
+                />
 
                 <input
                     type="password"
                     value={password}
                     onChange={(e) => setPassword(e.target.value)}
-                    placeholder="Password"
-                    />
+                    placeholder="Esteban1234"
+                />
 
                 <button onClick={handleLogin}>Log in</button>
 
