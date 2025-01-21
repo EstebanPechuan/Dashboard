@@ -1,0 +1,491 @@
+/* Login Component */
+.login { 
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  
+  .loginForm {
+    width: 400px;
+    min-height: 300px;
+    padding: 20px;
+    background: #fff;
+    border-radius: 8px;
+    
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    
+    h1 {
+      color: #201f24cc;
+    }
+    
+    input {
+      width: 300px;
+      padding: 10px 14px;
+      border: 1px solid #fff;
+      border-radius: 8px;
+      border: 2px solid #f8f5f0;
+      outline: none;
+    }
+    
+    button {
+      width: 300px;
+      padding: 10px;
+      border-radius: 8px;
+      background: linear-gradient(90deg, rgba(248,245,240,1) 0%, rgba(231,221,204,1) 100%);
+      color: #201f2490;
+      font-weight: bold;
+    }
+  }
+}
+
+/* Sidebar Component */
+.sidebar {
+  position: sticky;
+  top: 0;
+  width: 100%;
+  max-width: 280px;
+  height: 100vh;
+  padding-right: 16px;
+  background: #201f24;
+  border-radius: 0 8px 8px 0;
+  transition: 0.8s;
+  overflow: hidden;
+
+  /* position: relative; */
+  
+  display: flex;
+  flex-direction: column;
+  
+  li a {
+    width: 100%;
+    padding: 14px 20px;
+    border-radius: 0 8px 8px 0;
+    cursor: pointer;
+    background: transparent;
+    color: #f8f5f0;
+    transition: 0.8s;
+    
+    display: flex;
+    align-items: center;
+    
+    span,
+    button {
+      position: absolute;
+      left: 55px;
+      transition: 0.8s;
+    }
+
+    &:hover {
+      background: #fff6;
+    }
+    
+    &.active {
+      background: #f8f5f0;
+      color: #201f24;
+    }
+  }
+  
+  &.inactive {
+    max-width: 52px;
+    padding: 0;
+
+    .topSidebar {
+      padding: 20px 14px;
+
+      .sidebarTitle {
+        left: 150%;
+      }
+
+      button {
+        opacity: 1;
+      }
+    }
+    
+    li a {
+      padding: 14px 14px;
+      
+      span,
+      button {
+        left: 150%;
+      }
+    }
+  }
+
+  .topSidebar {
+    height: 75px;
+    padding: 20px;
+    color: #fffd;
+    margin-bottom: 20px;
+    font-size: 24px;
+    transition: 0.8s;
+
+    .sidebarTitle {
+      position: absolute;
+      left: 20px;
+      transition: 0.8s;    
+    }
+    
+    button {
+      opacity: 0;
+      transition: 0.8s;    
+    }
+  }
+
+  .bottonSidebar {
+    padding: 20px;
+    margin-top: auto;
+  }
+}
+
+
+/* Overview Page */
+#overview {
+  width: 100%;
+  min-height: 100vh;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+
+  .titles {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+  }
+
+  .detailsBox {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+
+    .balance,
+    .income,
+    .expenses {
+      width: 100%;
+      padding: 16px;
+      border-radius: 8px;
+      background: #fff;
+
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+
+      h4 {
+        font-size: 12px;
+      }
+
+      p {
+        font-size: 32px;
+      }
+    }
+
+    .balance {
+      background: #201f24;
+
+      h4,
+      p {  
+        color: #fff;
+      }
+    }
+  }
+
+  .everyGroup {
+    height: 100%;
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 16px;
+        
+    
+    .pots,
+    .transactions,
+    .budgets,
+    .bills {
+      padding: 16px;
+      border-radius: 8px;
+      background: #fff;
+
+      .texts {
+        height: 28px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        a {
+          color: #201f2499;
+          display: flex;
+          align-items: center;
+        }
+      }
+    }
+
+    .totalPots {
+      height: 100%;
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 10px;
+
+      .info {
+        background: #f8f5f0;
+        padding: 10px 14px;
+        border-radius: 8px;
+        
+        grid-column: span 2;
+        grid-row: span 2;
+
+        display: flex;
+        align-items: center;
+        gap: 10px;
+
+        svg {
+          color: #297b77;
+          width: 40px;
+        }
+
+        .infoTexts {
+          display: flex;
+          flex-direction: column;
+          gap: 10px;
+          
+          h4 {
+            color: #201f2499;
+          }
+  
+          p {
+            font-size: 32px;
+          }
+        }
+      }
+
+      .lastPots {
+        border-left: 4px solid;
+        border-radius: 4px;
+        padding-left: 10px;
+
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+
+        h4 {
+          color: #201f2490;
+          font-size: 12px;
+        }
+
+        span {
+          font-size: 16px;
+          font-weight: bold;
+        }
+
+        &:nth-child(2) {
+          border-color: #297b77;
+        }
+        &:nth-child(3) {
+          border-color: #81c9d7;
+        }
+        &:nth-child(4) {
+          border-color: #625f70;
+        }
+        &:nth-child(5) {
+          border-color: #f1cdab;
+        }
+      }
+    }
+
+    .budgets {      
+      .graph {
+        width: 280px;
+        margin: auto;
+      }
+    }
+
+    .pots {
+      grid-column: span 3;
+
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+    .transactions {
+      grid-column: span 3;
+      grid-row: span 5;
+
+      display: grid;
+      grid-template-columns: 1fr;
+    }
+    .budgets {
+      grid-column: span 2;
+      grid-row: span 3;
+    }
+    .bills {
+      grid-column: span 2;
+      grid-row: span 3;
+
+      display: grid;
+      grid-template-columns: 1fr;
+    }
+  }
+
+
+  .transactionList {
+    background: #f8f5f0;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2px;
+  }
+
+  .billsList {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 14px;
+    
+    .billCard {
+      padding: 10px 15px;
+      background: #f8f5f0;
+      border-left: 4px solid black;
+      border-radius: 8px;
+
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+
+      .texts {
+        padding-bottom: 10px;
+      }
+
+      p {
+        opacity: 0.4;
+      }
+
+      span {
+        font-weight: bold;
+      }
+
+      &:nth-child(1) {
+        border-color: #297b77;
+      }
+
+      &:nth-child(2) {
+        border-color: #f1cdab;
+      }
+
+      &:nth-child(3) {
+        border-color: #81c9d7;
+      }
+    }
+  }
+}
+
+
+/* Transaction Page */
+#transactions {
+  width: 100%;
+  padding: 20px;
+  
+  .transactions {
+    background: #fff;
+    padding: 20px;
+    margin-top: 20px;
+    border-radius: 8px;
+
+    .transactionsList {
+      background: #f8f5f0;
+      
+      display: flex;
+      flex-direction: column;
+      gap: 2px;
+    }
+  }
+}
+
+
+/* Bills Page */
+#bills {
+  width: 100%;
+  padding: 20px;
+  
+  .bills {
+    background: #fff;
+    padding: 20px;
+    margin-top: 20px;
+    border-radius: 8px;
+
+    .billsList {
+      background: #f8f5f0;
+      
+      display: flex;
+      flex-direction: column;
+      gap: 2px;
+    }
+  }
+}
+
+
+
+/* Small Components */
+/* TransactionDetails */
+.transactionsCard {
+  padding: 10px;
+  background: #fff;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  
+  .image {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    overflow: hidden;
+  }
+
+  .transactionDetail {
+    margin-left: auto;
+    
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    
+    .value {
+      min-width: 100px;
+
+      &.expense {
+        color: red;
+      }
+      
+      &.income {
+        color: green;
+      }
+    }
+  }
+}
+
+@media (max-width: 991px) {
+  .everyGroup {
+    grid-template-columns: 1fr !important;
+    gap: 16px 0 !important;
+  }
+}
+
+@media (max-width: 768px) {
+  #overview .titles h2 {
+    display: none !important;
+  }
+  
+  .totalPots {
+    grid-template-columns: 1fr !important;
+
+    .info {
+      grid-column: span 1 !important;
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .detailsBox {
+    grid-template-columns: 1fr !important;
+  }
+}

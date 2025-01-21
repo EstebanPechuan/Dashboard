@@ -1,0 +1,420 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <script type="module">
+import RefreshRuntime from "/@react-refresh"
+RefreshRuntime.injectIntoGlobalHook(window)
+window.$RefreshReg$ = () => {}
+window.$RefreshSig$ = () => (type) => type
+window.__vite_plugin_react_preamble_installed__ = true
+</script>
+
+    <script type="module" src="Authentication_files/client"></script>
+
+    <meta charset="UTF-8">
+    <link rel="icon" type="image/svg+xml" href="http://localhost:5173/vite.svg">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Authentication</title>
+  <style type="text/css" data-vite-dev-id="C:/Users/Esteban/OneDrive/Documentos/Programacion/1. Se vuelve/6. Portfolio/1. Authentication y dashboard/src/index.css">#root {
+  background: #f8f5f0;
+  display: flex;
+  /* gap: 20px; */
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+p {
+  color: #201f24;
+}
+
+li {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+button {
+  border: none;
+  color: #fffa;
+  background: transparent;
+  cursor: pointer;
+}</style><style type="text/css" data-vite-dev-id="C:/Users/Esteban/OneDrive/Documentos/Programacion/1. Se vuelve/6. Portfolio/1. Authentication y dashboard/src/App.css">/* Login Component */
+.loginForm {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.loginForm input {
+  padding: 10px 14px;
+  border: 1px solid #fff;
+  border-radius: 4px;
+  outline: none;
+}
+
+/* Sidebar Component */
+.sidebar {
+  position: sticky;
+  top: 0;
+  width: 100%;
+  max-width: 280px;
+  height: 100vh;
+  padding-right: 16px;
+  background: #201f24;
+  border-radius: 0 8px 8px 0;
+  transition: 0.8s;
+  overflow: hidden;
+
+  /* position: relative; */
+  
+  display: flex;
+  flex-direction: column;
+  
+  li a {
+    width: 100%;
+    padding: 14px 20px;
+    border-radius: 0 8px 8px 0;
+    cursor: pointer;
+    background: transparent;
+    color: #f8f5f0;
+    transition: 0.8s;
+    
+    display: flex;
+    align-items: center;
+    
+    span,
+    button {
+      position: absolute;
+      left: 55px;
+      transition: 0.8s;
+    }
+
+    &:hover {
+      background: #fff6;
+    }
+    
+    &.active {
+      background: #f8f5f0;
+      color: #201f24;
+    }
+  }
+  
+  &.inactive {
+    max-width: 52px;
+    padding: 0;
+
+    .topSidebar {
+      padding: 20px 14px;
+
+      .sidebarTitle {
+        left: 150%;
+      }
+
+      button {
+        opacity: 1;
+      }
+    }
+    
+    li a {
+      padding: 14px 14px;
+      
+      span,
+      button {
+        left: 150%;
+      }
+    }
+  }
+
+  .topSidebar {
+    height: 75px;
+    padding: 20px;
+    color: #fffd;
+    margin-bottom: 20px;
+    font-size: 24px;
+    transition: 0.8s;
+
+    .sidebarTitle {
+      position: absolute;
+      left: 20px;
+      transition: 0.8s;    
+    }
+    
+    button {
+      opacity: 0;
+      transition: 0.8s;    
+    }
+  }
+
+  .bottonSidebar {
+    padding: 20px;
+    margin-top: auto;
+  }
+}
+
+
+/* Overview Component */
+#overview {
+  width: 100%;
+  min-height: 100vh;
+  padding: 20px 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+
+  .titles {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+  }
+
+  .detailsBox {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+
+    .balance,
+    .income,
+    .expenses {
+      width: 100%;
+      padding: 16px;
+      border-radius: 8px;
+      background: #fff;
+
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+
+      h4 {
+        font-size: 12px;
+      }
+
+      p {
+        font-size: 32px;
+      }
+    }
+
+    .balance {
+      background: #201f24;
+
+      h4,
+      p {  
+        color: #fff;
+      }
+    }
+  }
+
+  .everyGroup {
+    height: 100%;
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 16px;
+        
+    
+    .pots,
+    .transactions,
+    .budgets,
+    .bills {
+      padding: 16px;
+      border-radius: 8px;
+      background: #fff;
+
+      .texts {
+        height: 28px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        a {
+          color: #201f2499;
+          display: flex;
+          align-items: center;
+        }
+      }
+    }
+
+    .totalPots {
+      height: 100%;
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 10px;
+
+      .info {
+        background: #f8f5f0;
+        padding: 10px 14px;
+        border-radius: 8px;
+        
+        grid-column: span 2;
+        grid-row: span 2;
+
+        display: flex;
+        align-items: center;
+        gap: 10px;
+
+        svg {
+          color: #297b77;
+          width: 40px;
+        }
+
+        .infoTexts {
+          display: flex;
+          flex-direction: column;
+          gap: 10px;
+          
+          h4 {
+            color: #201f2499;
+          }
+  
+          p {
+            font-size: 32px;
+          }
+        }
+        
+      }
+    }
+
+    .budgets {      
+      .graph {
+        width: 280px;
+        margin: auto;
+      }
+    }
+
+    .pots {
+      grid-column: span 3;
+
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+    .transactions {
+      grid-column: span 3;
+      grid-row: span 5;
+
+      display: grid;
+      grid-template-columns: 1fr;
+    }
+    .budgets {
+      grid-column: span 2;
+      grid-row: span 3;
+    }
+    .bills {
+      grid-column: span 2;
+      grid-row: span 3;
+
+      display: grid;
+      grid-template-columns: 1fr;
+    }
+  }
+
+
+  .transactionList {
+    background: #f8f5f0;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2px;
+  }
+
+  .transactionsCard {
+    padding: 10px;
+    background: #fff;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    
+    .image {
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      overflow: hidden;
+    }
+
+    .transactionDetail {
+      margin-left: auto;
+
+      .value {
+        &.expense {
+          color: red;
+        }
+        
+        &.income {
+          color: green;
+        }
+      }
+    }
+  }
+
+  .billsList {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 14px;
+    
+    .billCard {
+      padding: 10px 15px;
+      background: #f8f5f0;
+      border-left: 4px solid black;
+      border-radius: 8px;
+
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+
+      .texts {
+        padding-bottom: 10px;
+      }
+
+      p {
+        opacity: 0.4;
+      }
+
+      span {
+        font-weight: bold;
+      }
+
+      &:nth-child(1) {
+        border-color: #297b77;
+      }
+
+      &:nth-child(2) {
+        border-color: #f1cdab;
+      }
+
+      &:nth-child(3) {
+        border-color: #81c9d7;
+      }
+    }
+  }
+}
+
+
+@media (max-width: 991px) {
+  .everyGroup {
+    grid-template-columns: 1fr !important;
+    gap: 16px 0 !important;
+  }
+}
+
+@media (max-width: 590px) {
+  #overview .titles h2 {
+    display: none !important;
+  }
+}</style></head>
+  <body>
+    <div id="root"><div id="sidebar" class="sidebar"><div class="topSidebar"><h3 class="sidebarTitle">Finances</h3><button><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" role="img" class="iconify iconify--line-md" width="24" height="24" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-dasharray="16" stroke-dashoffset="16" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"><path d="M5 5h14"><animate fill="freeze" attributeName="stroke-dashoffset" dur="0.2s" values="16;0"></animate></path><path d="M5 12h14"><animate fill="freeze" attributeName="stroke-dashoffset" begin="0.2s" dur="0.2s" values="16;0"></animate></path><path d="M5 19h14"><animate fill="freeze" attributeName="stroke-dashoffset" begin="0.4s" dur="0.2s" values="16;0"></animate></path></g></svg></button></div><nav><li><a class="active" href="http://localhost:5173/overview" data-discover="true"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" role="img" class="iconify iconify--material-symbols" width="24" height="24" viewBox="0 0 24 24"><path fill="currentColor" d="M4 19v-9q0-.475.213-.9t.587-.7l6-4.5q.525-.4 1.2-.4t1.2.4l6 4.5q.375.275.588.7T20 10v9q0 .825-.588 1.413T18 21h-3q-.425 0-.712-.288T14 20v-5q0-.425-.288-.712T13 14h-2q-.425 0-.712.288T10 15v5q0 .425-.288.713T9 21H6q-.825 0-1.412-.587T4 19"></path></svg><span>Overview</span></a></li><li><a class="" href="http://localhost:5173/transactions" data-discover="true"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" role="img" class="iconify iconify--tabler" width="24" height="24" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m3 9l4-4l4 4M7 5v14m14-4l-4 4l-4-4m4 4V5"></path></svg><span>Transactions</span></a></li><li><a class="" href="http://localhost:5173/budgets" data-discover="true"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" role="img" class="iconify iconify--uim" width="24" height="24" viewBox="0 0 24 24"><path fill="currentColor" d="M6 23H2a1 1 0 0 1-1-1v-8a1 1 0 0 1 1-1h4a1 1 0 0 1 1 1v8a1 1 0 0 1-1 1" opacity=".25"></path><path fill="currentColor" d="M14 23h-4a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1h4a1 1 0 0 1 1 1v20a1 1 0 0 1-1 1"></path><path fill="currentColor" d="M22 23h-4a1 1 0 0 1-1-1V10a1 1 0 0 1 1-1h4a1 1 0 0 1 1 1v12a1 1 0 0 1-1 1" opacity=".5"></path></svg><span>Budgets</span></a></li><li><a class="" href="http://localhost:5173/pots" data-discover="true"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" role="img" class="iconify iconify--material-symbols" width="24" height="24" viewBox="0 0 24 24"><path fill="currentColor" d="M5.925 21q-.575 0-1.112-.4t-.713-.975q-.625-2.1-1.025-3.637t-.638-2.7t-.337-2.063T2 9.5q0-2.3 1.6-3.9T7.5 4h5q.675-.9 1.713-1.45T16.5 2q.625 0 1.063.438T18 3.5q0 .15-.038.3t-.087.275q-.1.275-.187.55t-.138.6L19.825 7.5H21q.425 0 .713.288T22 8.5v5.25q0 .325-.187.575t-.513.375l-2.125.7l-1.25 4.175q-.2.65-.725 1.038T16 21h-2q-.825 0-1.412-.587T12 19h-2q0 .825-.587 1.413T8 21zM16 11q.425 0 .713-.288T17 10t-.288-.712T16 9t-.712.288T15 10t.288.713T16 11m-4-2q.425 0 .713-.288T13 8t-.288-.712T12 7H9q-.425 0-.712.288T8 8t.288.713T9 9z"></path></svg><span>Pots</span></a></li><li><a class="" href="http://localhost:5173/bills" data-discover="true"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" role="img" class="iconify iconify--ph" width="24" height="24" viewBox="0 0 256 256"><path fill="currentColor" d="M216 40H40a16 16 0 0 0-16 16v160a8 8 0 0 0 11.58 7.15L64 208.94l28.42 14.21a8 8 0 0 0 7.16 0L128 208.94l28.42 14.21a8 8 0 0 0 7.16 0L192 208.94l28.42 14.21A8 8 0 0 0 232 216V56a16 16 0 0 0-16-16M116 160a4 4 0 0 1-4 4H64a4 4 0 0 1-4-4V96a4 4 0 0 1 4-4h48a4 4 0 0 1 4 4Zm76-8h-48a8 8 0 0 1 0-16h48a8 8 0 0 1 0 16m0-32h-48a8 8 0 0 1 0-16h48a8 8 0 0 1 0 16"></path></svg><span>Recurring Bills</span></a></li><li class="logout"><a href="http://localhost:5173/" data-discover="true"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" role="img" class="iconify iconify--ri" width="24" height="24" viewBox="0 0 24 24"><path fill="currentColor" d="M4 18h2v2h12V4H6v2H4V3a1 1 0 0 1 1-1h14a1 1 0 0 1 1 1v18a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1zm2-7h7v2H6v3l-5-4l5-4z"></path></svg><button>Logout</button></a></li></nav><div class="bottonSidebar"><button>Minimize Menu</button></div></div><div id="overview"><div class="titles"><h1>Overview</h1><h2>Welcome, Esteban Pechuan</h2></div><div class="detailsBox"><div class="balance"><h4>Current Balance</h4><p>$</p></div><div class="income"><h4>Income</h4><p>$</p></div><div class="expenses"><h4>Expenses</h4><p>$</p></div></div><div class="everyGroup"><div class="pots"><div class="texts"><h2>Pots</h2><a href="http://localhost:5173/pots" data-discover="true">See Details<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" role="img" class="iconify iconify--material-symbols-light" width="24" height="24" viewBox="0 0 24 24"><path fill="currentColor" d="M9 15.714V8.287q0-.368.244-.588q.243-.22.568-.22q.102 0 .213.028q.11.027.211.083l5.843 3.733q.186.13.28.298q.093.167.093.379t-.093.379t-.28.298l-5.843 3.733q-.101.055-.213.083t-.213.028q-.326 0-.568-.22T9 15.714"></path></svg></a></div><div class="totalPots"><div class="info"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" role="img" class="iconify iconify--material-symbols" width="40" height="40" viewBox="0 0 24 24"><path fill="currentColor" d="M5.925 21q-.575 0-1.112-.4t-.713-.975q-.625-2.1-1.025-3.637t-.638-2.7t-.337-2.063T2 9.5q0-2.3 1.6-3.9T7.5 4h5q.675-.9 1.713-1.45T16.5 2q.625 0 1.063.438T18 3.5q0 .15-.038.3t-.087.275q-.1.275-.187.55t-.138.6L19.825 7.5H21q.425 0 .713.288T22 8.5v5.25q0 .325-.187.575t-.513.375l-2.125.7l-1.25 4.175q-.2.65-.725 1.038T16 21h-2q-.825 0-1.412-.587T12 19h-2q0 .825-.587 1.413T8 21zM16 11q.425 0 .713-.288T17 10t-.288-.712T16 9t-.712.288T15 10t.288.713T16 11m-4-2q.425 0 .713-.288T13 8t-.288-.712T12 7H9q-.425 0-.712.288T8 8t.288.713T9 9z"></path></svg><div class="infoTexts"><h4>Total Saved</h4><p>$850</p></div></div><div class="lastPots">Hola1</div><div class="lastPots">Hola2</div><div class="lastPots">Hola3</div><div class="lastPots">Hola4</div></div></div><div class="budgets"><div class="texts"><h2>Budgets</h2><a href="http://localhost:5173/budgets" data-discover="true">See Details<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" role="img" class="iconify iconify--material-symbols-light" width="24" height="24" viewBox="0 0 24 24"><path fill="currentColor" d="M9 15.714V8.287q0-.368.244-.588q.243-.22.568-.22q.102 0 .213.028q.11.027.211.083l5.843 3.733q.186.13.28.298q.093.167.093.379t-.093.379t-.28.298l-5.843 3.733q-.101.055-.213.083t-.213.028q-.326 0-.568-.22T9 15.714"></path></svg></a></div><div class="graph"><canvas role="img" height="280" width="280" style="box-sizing: border-box; display: block; height: 280px; width: 280px;"></canvas></div></div><div class="transactions"><div class="texts"><h2>Transactions</h2><a href="http://localhost:5173/transactions" data-discover="true">View All<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" role="img" class="iconify iconify--material-symbols-light" width="24" height="24" viewBox="0 0 24 24"><path fill="currentColor" d="M9 15.714V8.287q0-.368.244-.588q.243-.22.568-.22q.102 0 .213.028q.11.027.211.083l5.843 3.733q.186.13.28.298q.093.167.093.379t-.093.379t-.28.298l-5.843 3.733q-.101.055-.213.083t-.213.028q-.326 0-.568-.22T9 15.714"></path></svg></a></div><div class="transactionList"></div></div><div class="bills"><div class="texts"><h2>Recurring Bills</h2><a href="http://localhost:5173/bills" data-discover="true">See Details<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" role="img" class="iconify iconify--material-symbols-light" width="24" height="24" viewBox="0 0 24 24"><path fill="currentColor" d="M9 15.714V8.287q0-.368.244-.588q.243-.22.568-.22q.102 0 .213.028q.11.027.211.083l5.843 3.733q.186.13.28.298q.093.167.093.379t-.093.379t-.28.298l-5.843 3.733q-.101.055-.213.083t-.213.028q-.326 0-.568-.22T9 15.714"></path></svg></a></div><div class="billsList"><div class="billCard"><p>Paid Bills</p><span>$</span></div><div class="billCard"><p>Total Upocoming</p><span>$</span></div><div class="billCard"><p>Due Soon</p><span>$</span></div></div></div></div></div></div>
+    <script type="module" src="Authentication_files/main.jsx"></script>
+  
+
+</body></html>
