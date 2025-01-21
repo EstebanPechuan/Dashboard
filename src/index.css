@@ -1,13 +1,16 @@
 #root {
   background: #f8f5f0;
   display: flex;
-  /* gap: 20px; */
 }
 
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+}
+
+.montserrat-dashboard {
+  font-family: "Montserrat", serif;
 }
 
 img {
