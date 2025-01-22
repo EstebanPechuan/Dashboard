@@ -41,9 +41,7 @@ export const Overview = () => {
                 <div className="titles">
                     <h1>Overview</h1>
 
-                    <h2>Welcome, {user.name}</h2>
-
-                    {/* <h2>Welcome Esteban Pechuan</h2> */}
+                    <h2>Welcome, {user?.name || 'Esteban Pechuan'}</h2>
                 </div>
 
                 <div className="detailsBox">
@@ -68,7 +66,7 @@ export const Overview = () => {
                         <div className="texts">
                             <h2>Pots</h2>
 
-                            <Link to={'/pots'}>
+                            <Link to={'#'}>
                                 See Details
                                 <Icon icon="material-symbols-light:play-arrow-rounded" width="24" height="24" />
                             </Link>
@@ -115,7 +113,7 @@ export const Overview = () => {
                         <div className="texts">
                             <h2>Budgets</h2>
 
-                            <Link to={'/budgets'}>
+                            <Link to={'#'}>
                                 See Details
                                 <Icon icon="material-symbols-light:play-arrow-rounded" width="24" height="24" />
                             </Link>
